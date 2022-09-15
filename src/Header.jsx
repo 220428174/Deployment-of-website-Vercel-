@@ -11,7 +11,7 @@ const Header = (props) => {
             <button name="button" value="OK" type="button">POST.</button>
             <button name="button" value="OK" type="button">CONTACT.</button>
             
-            <button onClick={logout}>Logout</button>
+            
             
             
         </div>
