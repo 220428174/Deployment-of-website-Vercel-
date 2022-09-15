@@ -12,6 +12,11 @@ import Footer from './Footer';
 
 
 function App() {
+  
+  const logout = async () => {
+    const auth = getAuth();    
+    await signOut(auth);
+  }
 
   const [searchTerm, setSearchTerm] = useState("")
 
