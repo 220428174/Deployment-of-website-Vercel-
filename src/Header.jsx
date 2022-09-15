@@ -10,6 +10,8 @@ const Header = (props) => {
             <button name="button" value="OK" type="button"><a href="https://sit-313-task-10-1.vercel.app/login">LOGIN. </a> </button>
             <button name="button" value="OK" type="button">POST.</button>
             <button name="button" value="OK" type="button">CONTACT.</button>
+        
+            <button name="button" onClickCapture={logout}>Logout</button>
             
         </div>
     )
