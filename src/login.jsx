@@ -15,10 +15,7 @@ export default function Login() {
       },
     });
     
-    const logout = () => {
-    localStorage.removeItem('token-info');
-    setIsLoggedin(false);
-    };
+   
 
     const onSubmit = async (values) => {
       await signInWithEmailAndPassword(auth, values.email, values.password)
