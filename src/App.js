@@ -4,42 +4,64 @@ import Header from './Header';
 import CardList from './CardList';
 import CardList2 from './CardList2';
 
-
 import { useState } from 'react';
 import Footer from './Footer';
+import { Button } from "@mantine/core";
+
+import { getAuth } from "firebase/auth";
+
+import { useNavigate } from "react-router-dom";
+
 
 
 
 
 function App() {
-  
-  
 
   const [searchTerm, setSearchTerm] = useState("")
 
+  const auth = getAuth();
+
+  let navigate = useNavigate();
+
+
+  const logout = async () => {
+    
+    navigate("/logout");
+
+  }
+
   return (
+
     <div className="App">
 
+    
+
       <div className = "header-div">
+
       
-        <div className = "header" > <Header />
+      
+        <div className = "header" > <Header /> 
           <div className = "moveBar">
+          
             <input className="strechbar" 
             type="text" 
             placeholder="Search..." 
             onChange={
             (e)=>{setSearchTerm(e.target.value)}
             }
-          value={searchTerm}/>
+          value={searchTerm}/> 
+
         </div>
+
       </div>
+
+      {auth.currentUser && <Button onClick={logout}>Logout</Button>}
 
     </div>
         
     <div > <img class="profile-image" src="./bannerimage313.jpg" width="1491vm" height="300px" alt="banner"/></div>
 
-      
-      
     <div className = "body">
 
       <hr></hr>
@@ -51,7 +73,6 @@ function App() {
       <br></br>
       <br></br>
       
-
       <h1><u> The Team! </u></h1>
       
       <CardList2/>
@@ -60,11 +81,8 @@ function App() {
 
       <hr></hr>
       
+      <Footer />
        
-        <Footer />
-       
-        
-
       <div class="grid-container">
         <div class="item1">
           <h4><u>About</u></h4>
@@ -110,3 +128,4 @@ function App() {
 }
 
 export default App;
+
