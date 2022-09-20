@@ -31,6 +31,9 @@ function App() {
 
   }
 
+  
+  
+  
   return (
 
     <div className="App">
@@ -56,7 +59,7 @@ function App() {
 
       </div>
 
-      {auth.currentUser && <Button onClick={logout}>Logout</Button>}
+      { auth.currentUser && < Button onClick={logout}> LOGOUT </Button >}
 
     </div>
         
